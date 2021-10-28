@@ -1,0 +1,39 @@
+{
+  "name": "RTL_433 to MQTT Bridge",
+  "version": "0.3.8",
+  "slug": "rtl4332mqtt",
+  "description": "433MHz RF to MQTT Bridge based on RTL_SDR/RTL_433 for RTL2832U based DVB-T USB tuners",
+  "url": "https://github.com/panctronic/hassio-addons/tree/master/rtl4332mqtt",
+  "startup": "application",
+  "map": ["config:rw", "ssl"],
+  "usb": true,
+  "host_network": "False",
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armv7",
+    "i386"
+  ],
+  "options":
+  {
+    "mqtt_host": "hassio.local",
+    "mqtt_user": "",
+    "mqtt_password": "",
+    "mqtt_topic": "homeassistant/sensor/currentcost",
+    "protocol": [10, 11, 40, 41, 55, 74, 163],
+    "frequency": 433915000,
+    "gain": 60,
+    "frequency_offset": 0
+  },
+  "schema":
+  {
+    "mqtt_host": "str",
+    "mqtt_user": "str",
+    "mqtt_password": "password",
+    "mqtt_topic": "str",
+    "protocol": ["int"],
+    "frequency": "int",
+    "gain": "int",
+    "frequency_offset": "int"
+   }
+}
